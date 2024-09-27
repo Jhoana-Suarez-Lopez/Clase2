@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhoana suarez lopez<br>Horario de Clases</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Horario de Clases</h1>
+        <div>
+            <label for="tiemposClase">Seleccione la hora de clase:</label>
+            <input type="time" id="tiemposClase" required>
+        </div>
+        <div class="tiempo-buttons" id="tiempoButtons"></div>
+        <table id="tableClase">
+            <thead>
+                <tr>
+                    <th>Profesor</th>
+                    <th>Asignatura</th>
+                    <th>Aula</th>
+                    <th>Hora</th>
+                </thead>
+                <tbody id="classInfo"></tbody>
+            </table>
+            <p id="mensaje" class="mensaje" style="display: none;"></p>
+        </div>
+    
+        <script src="script.js">
+        </script>
+    </body>
+    </html>

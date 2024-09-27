@@ -1,0 +1,11 @@
+Ingrese la hora de clase que necesita, aparecera la horas que el profesor tiene disponibles, que estaran definidas en un array de js, Según la hora que el usuario ingrese le arrojara una tabla con el nombre del profesor el número de aula y la asignatura que tiene
+
+nombre: William
+Aulas: 1, 2, 3, 4, 5
+Asignaturas: Artistica, castellano, Religion, Quimica, Fisica
+
+Borrador 1
+ 
+js{
+
+}

@@ -1,0 +1,48 @@
+Registro de asistencia:
+Problema: Llevar un registro de asistencia diario de los estudiantes.
+Algoritmo: Crear un algoritmo que permita registrar la asistencia de cada estudiante y genere un informe diario con el porcentaje de asistencia.
+
+El estudiante desea ingresar la asistensia de un día que si fue al "colegio"
+
+Va a ser una lista de estudiantes, se necesita que el usuario ingrese el nombre y grado, según el grado se desplegara la lista de esos estudiantes que se necesitan, según cuantos estudiantes se registren creara un porcentaje y lo mostrará en pantalla cuando pase determinado tiempo
+
+borrador 1 js{
+
+    const attendanceForm = document.getElementById('attendanceForm');
+        const attendanceTable = document.getElementById('attendanceTable').getElementsByTagName('tbody')[0];
+        const attendanceReport = document.getElementById('attendanceReport');
+        let attendanceData = [];
+
+        attendanceForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const date = document.getElementById('date').value;
+            const studentName = document.getElementById('studentName').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+
+            attendanceData.push({ date, studentName, attendance });
+
+            const row = attendanceTable.insertRow();
+            row.innerHTML = `
+                <td>${date}</td>
+                <td>${studentName}</td>
+                <td>${attendance === 'present' ? 'Presente' : 'Ausente'}</td>
+            `;
+
+            updateAttendanceReport();
+            attendanceForm.reset();
+        });
+
+        function updateAttendanceReport() {
+            const totalStudents = attendanceData.length;
+            const presentStudents = attendanceData.filter(data => data.attendance === 'present').length;
+            const attendancePercentage = (presentStudents / totalStudents) * 100;
+
+            attendanceReport.innerHTML = `
+                <h3>Informe de Asistencia</h3>
+                <p>Total de estudiantes: ${totalStudents}</p>
+                <p>Estudiantes presentes: ${presentStudents}</p>
+                <p>Porcentaje de asistencia: ${attendancePercentage.toFixed(2)}%</p>
+            `;
+        }
+
+}

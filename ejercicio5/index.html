@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca Escolar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jhoana suarez lopez<br> Sistema de Biblioteca Escolar</h1>
+        <form id="bookForm">
+            <div class="form-group">
+                <label for="bookTitle">Título del Libro:</label>
+                <input type="text" id="bookTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="studentName">Nombre del Estudiante:</label>
+                <input type="text" id="studentName" required>
+            </div>
+            <div class="form-group">
+                <label for="borrowDate">Fecha de Préstamo:</label>
+                <input type="date" id="borrowDate" required>
+            </div>
+            <div class="form-group">
+                <label for="returnDate">Fecha de Devolución:</label>
+                <input type="date" id="returnDate" required>
+            </div>
+            <button type="submit" id="borrowButton">Prestar Libro</button>
+            <button type="button" id="returnButton">Devolver Libro</button>
+        </form>
+
+        <h2>Libros Prestados</h2>
+        <table id="borrowedBooks">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Estudiante</th>
+                    <th>Fecha de Préstamo</th>
+                    <th>Fecha de Devolución</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="alerts" class="alert"></div>
+    </div>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
